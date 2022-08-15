@@ -35,7 +35,7 @@ public class Main {
         FileStreamAPI f= new FileStreamAPI();
      //   f.walkDir();
        // f.getIdentityMatrix(4);
-        f.printChar("INDIA");
+        f.printChar("InDIA");
     }
     private static void perfectSqare(){
         int n=getScanner();

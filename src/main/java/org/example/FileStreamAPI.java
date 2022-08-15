@@ -12,7 +12,7 @@ public class FileStreamAPI {
         boolean isDirectory= Files.isDirectory(p);
         try{
             Stream<Path> s= Files.walk(p);
-         long count=   s.filter(path -> Files.isDirectory(path))
+         long count=   s.filter(Files::isDirectory)
                             .count();
 
             System.out.println(count);
@@ -53,8 +53,14 @@ public class FileStreamAPI {
     }
     public void printChar(String s){
         char [] ch=s.toCharArray();
+        int count=0;
         for(int i=0;i<ch.length;i++){
-            System.out.println((int)ch[i]);
+            int code= (int)ch[i];
+            if(code>=65 && code<=90){
+                count++;
+            }
+
         }
+        System.out.println(count);
     }
 }
